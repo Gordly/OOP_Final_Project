@@ -1,32 +1,55 @@
-from doctor import Doctor
-from facilities import Facility
-from laboratory import Laboratory
-from patients import patients
 
-def menu():
 
-    while True:
-        try:
-            option = int(input('\n1 - Doctors\n2 - Facilities\n3 - Laboratories\n4 - Patients\n\n'))
+
+class Menu:
+
+    def main():
+                     
+        from facilities import Facility
+        from doctor import Doctor
+        from laboratory import Laboratory
+        from patients import patients
+        
+    
+        while (True):
+                
+            menu_choice = int((input("""Welcome to Alberta Hospital (AH) Managment system 
+            Select from the following options, or select 0 to stop: 
+            1 - 	Doctors
+            2 - 	Facilities
+            3 - 	Laboratories
+            4 - 	Patients 
+            """)))
+
+
             
-            if option == 1:
-                print('\n')
+            if (menu_choice == 0):
+                break
+            
+
+            elif (menu_choice == 1):
                 Doctor.menu()
                 continue
+                
 
-            elif option == 2:
-                print('\n')
+            elif (menu_choice == 2):
                 Facility.menu()
-                continue
+                continue 
+                
 
-            elif option == 3:
-                print('\n')
+
+            elif (menu_choice == 3):
+                
                 Laboratory.menu()
-
-            elif option == 4:
-                print('\n')
+                continue
+               
+            
+            elif (menu_choice == 4):
                 patients.menu()
-        except:
-            continue
+                continue
+                
 
-menu()
+            break
+
+
+Menu.main()
